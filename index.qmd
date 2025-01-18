@@ -1,18 +1,18 @@
 ---
-title: "Notebook"
-output: 
-    flexdashboard::flex_dashboard:
-        orientation: columns
-        vertical_layout: fill
-date: "2025-01-18"
+title: "Divvy Bike Analysis"
+format: 
+    html:
+        theme: lux
+editor: visual
+execute:
+    echo: false
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r, importing-libraries}
+```{r, importing-libraries, include=FALSE}
 library(tidyverse)
 library(ggplot2)
 library(dplyr)
@@ -21,7 +21,7 @@ library(webr)
 library(flexdashboard)
 ```
 
-```{r, reading-data}
+```{r, reading-data, include=FALSE}
 january <- read.csv("datasets/202401-divvy-tripdata.csv")
 february <- read.csv("datasets/202402-divvy-tripdata.csv")
 march <- read.csv("datasets/202403-divvy-tripdata.csv")
@@ -36,7 +36,7 @@ november <- read.csv("datasets/202411-divvy-tripdata.csv")
 december <- read.csv("datasets/202412-divvy-tripdata.csv")
 ```
 
-```{r}
+```{r, combining-datasets, include=FALSE}
 all_data <- bind_rows(
     january |> mutate(month = 1),
     february |> mutate(month = 2),
@@ -51,15 +51,16 @@ all_data <- bind_rows(
     november |> mutate(month = 11),
     december |> mutate(month = 12)
 )
+View(all_data)
 ```
 
-```{r, sample_dataset}
+```{r, sample_dataset, include=FALSE}
 all_data <- all_data |> 
-    sample_n(1000)
+    sample_n(100)
 ```
 
 
-```{r, combining-data}
+```{r, combining-data, include=FALSE}
 all_data <- all_data |>
       mutate(hour = hour(started_at)) |>
       mutate(time_of_day = 
@@ -81,17 +82,17 @@ all_data <- all_data |>
     )
 )
 sample_data <- all_data |> 
-    sample_n(1000)
+    sample_n(100)
 ```
 
 
 
-```{r}
+```{r, remove-data, include=FALSE}
 rm(january, february, march, april, may, june, july, august, september, october, november, december)
 ```
 
 
-```{r, ride_type_by_user}
+```{r, ride_type_by_user, include=FALSE}
 ride_type_by_user <- sample_data |>
     group_by(member_casual) |>
     summarise(count = n()) |>
@@ -120,12 +121,11 @@ ride_type_by_user |>
       x = 0,
       y = 0,
       label = paste0(round(nrow(sample_data) / 1000000, 2), "M\nTotal\nRides"),
-      family= "Arial",
       size = 7,
       lineheight = 1
     ) +
     coord_equal(expand = FALSE, xlim = c(-1.1, 1.1), ylim = c(-1.1, 1.1)) +
-    theme_void(base_size = 16, base_family = 'Arial') +
+    theme_void(base_size = 16) +
     labs(
         fill = element_blank()
     ) +
@@ -136,7 +136,7 @@ ride_type_by_user |>
     scale_fill_manual(values = c("member" = "#1f77b4", "casual" = "#ff7f0e"))
 ```
 
-```{r, ride_type_by_rideable}
+```{r, ride_type_by_rideable, include=FALSE}
 ride_type_by_rideable <- sample_data |>
   group_by(rideable_type, member_casual) |>
   summarise(count = n())
@@ -152,7 +152,7 @@ ggplot(ride_type_by_rideable, aes(x = rideable_type, y = count, fill = member_ca
   theme_minimal()
 ```
 
-```{r, average_ride_length}
+```{r, average_ride_length, include=FALSE}
 average_ride_length <- sample_data |>
     mutate(ride_length = as.numeric(difftime(ended_at, started_at, units = "mins"))) |>
     group_by(member_casual) |>
@@ -160,7 +160,7 @@ average_ride_length <- sample_data |>
 average_ride_length
 ```
 
-```{r, ride_length_by_weekday}
+```{r, ride_length_by_weekday, include=FALSE}
 ride_length_by_weekday <- sample_data |>
     mutate(ride_length = as.numeric(difftime(ended_at, started_at, units = "mins")),
            day_of_week = weekdays(as.Date(started_at))) |>
@@ -179,7 +179,7 @@ ggplot(ride_length_by_weekday, aes(x = day_of_week, y = average_ride_length)) +
     theme_minimal()
 ```
 
-```{r, total_rides_by_weekday}
+```{r, total_rides_by_weekday, include=FALSE}
 total_rides_by_weekday <- sample_data |>
     mutate(day_of_week = weekdays(as.Date(started_at))) |>
     group_by(day_of_week) |>
@@ -196,7 +196,8 @@ total_rides_by_weekday |>
     theme_minimal()
 ```
 
-```{r, total_rides_by_hour}
+
+```{r, total_rides_by_hour, include=FALSE}
 total_rides_by_hour <- sample_data |>
     mutate(hour = hour(started_at)) |>
     group_by(hour, time_of_day) |>
@@ -214,7 +215,7 @@ total_rides_by_hour |>
 ```
 
 
-```{r, total_rides_by_month}
+```{r, total_rides_by_month, include=FALSE}
 total_rides_by_month <- sample_data |>
   mutate(month = month(started_at, label = TRUE)) |>
   group_by(month, season) |>
@@ -231,9 +232,3 @@ total_rides_by_month |>
   ) +
   theme_minimal()
 ```
-
-```{r}
-
-```
-
-
