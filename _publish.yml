@@ -1,4 +1,4 @@
 - source: project
   netlify:
     - id: a8686b3e-20a8-443c-b506-8efa9a0f5bb0
-      url: https://aesthetic-biscuit-9e7897.netlify.app
+      url: https://divvy-bike-analysis.netlify.app

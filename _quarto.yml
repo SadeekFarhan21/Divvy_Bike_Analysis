@@ -1,16 +1,13 @@
-cookie_consent:
-  style: simple
-  type: express
-  palette: light
-  lang: en
-  cookies_policy: https://example.com/cookies-policy
- 
 project:
-    type: website
+  type: website
+  output-dir: _site
 
 website:
-    title: "My Website"
-    navbar:
-        right:
-            - index.qmd
-            - about.qmd
+  title: "Divvy Bike Analysis"
+  site-url: https://divvy-bike-analysis.netlify.app
+  repo-url: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis
+  bread-crumbs: true
+  navbar:
+    right:
+      - icon: "github"
+        href: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis

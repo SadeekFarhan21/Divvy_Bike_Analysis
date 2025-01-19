@@ -1,8 +1,8 @@
 ---
 title: "about"
 format: 
-    html:
-        theme: lux
+  html:
+    theme: cyborg
 ---
 
 ## Quarto

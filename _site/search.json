@@ -1,5 +1,103 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Divvy Bike Analysis",
+    "section": "",
+    "text": "Public bike share (PBS).\nA PBS is an extension of the existing transit system with a network of short-term, self-service bicycle posts in which:\n\nUsers can use bikes by purchasing casual day use or annual memberships,\nUsers can ride bikes for a short distance for one-way trips within a defined service area and Station locations can change overtime based on ridership practices or operation needs.\n\nBike share technology continues to evolve quickly along with other wireless and digital changes. Other recent advancements include systems that do not require docking stations i.e. “smart lock” systems and electric‐assist bikes.\n\nI used 1 year (12 Months) of Divvy Chicago Bike Sharing Data from Jan 2024 to Dec 2024, obtained from Divy Bike .\nThis dataset included 5,667,986 trips, of which 3,127,293 / 55.2% were made by annual or monthly members, and 2,540,693 / 44.8% by casual users.\n\nAlthough this dataset is not a result of a survey, The following missing features could make this analysis more interesting and stronger if were exist.\n\nBike ID,\nUser ID,\nUser Gender,\nUser Age,\nPurpose of trip,\nTrip distance and\nWeather conditions.\n\nI believe some of them are connected to the agreed privacy policy!\nAnyway, let’s load the packages we need for this brief analysis\n\nShow the codeknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(paletteer)\nlibrary(PNWColors) \nscale_colour_paletteer_d(\"PNWColors::Sunset\")\nscale_fill_paletteer_d(\"PNWColors::Sunset\")\ntheme_set(theme_minimal())\n\n\nWe are setting up our system by loading the necessary libraries. These libraries will enable us to perform data manipulation, visualization, and interactive chart creation. ## Reading Data In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the datasets folder."
+  },
+  {
+    "objectID": "index.html#setup",
+    "href": "index.html#setup",
+    "title": "Divvy Bike Analysis",
+    "section": "",
+    "text": "We are setting up our system.\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\nWe are setting up our system by loading the necessary libraries. These libraries will enable us to perform data manipulation, visualization, and interactive chart creation. ## Reading Data In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the datasets folder."
+  },
+  {
+    "objectID": "index.html#reading-data",
+    "href": "index.html#reading-data",
+    "title": "Divvy Bike Analysis",
+    "section": "Reading Data",
+    "text": "Reading Data"
+  },
+  {
+    "objectID": "index.html#combining-the-datasets",
+    "href": "index.html#combining-the-datasets",
+    "title": "Divvy Bike Analysis",
+    "section": "Combining the datasets",
+    "text": "Combining the datasets\nHere, we combine all monthly datasets into a single dataset for easier analysis. Additionally, a month column is added to each dataset to identify the month of each ride."
+  },
+  {
+    "objectID": "index.html#sample-dataset",
+    "href": "index.html#sample-dataset",
+    "title": "Divvy Bike Analysis",
+    "section": "Sample Dataset",
+    "text": "Sample Dataset\nTo make our analysis more efficient and focus on a manageable subset of data, we sample 100 records from the combined dataset."
+  },
+  {
+    "objectID": "index.html#combining-data",
+    "href": "index.html#combining-data",
+    "title": "Divvy Bike Analysis",
+    "section": "Combining Data",
+    "text": "Combining Data\nTo enhance our analysis, we derive new columns: - Hour: Extracts the hour from the start time. - Time of Day: Categorizes hours into time periods (Night, Morning, Afternoon, Evening). - Season: Categorizes months into seasons (Winter, Spring, Summer, Fall)."
+  },
+  {
+    "objectID": "index.html#remove-data",
+    "href": "index.html#remove-data",
+    "title": "Divvy Bike Analysis",
+    "section": "Remove Data",
+    "text": "Remove Data\nWe clean up our workspace by removing the individual monthly datasets, which are no longer needed after combining."
+  },
+  {
+    "objectID": "index.html#ride-type-by-user",
+    "href": "index.html#ride-type-by-user",
+    "title": "Divvy Bike Analysis",
+    "section": "Ride type by user",
+    "text": "Ride type by user\nThis section analyzes ride types based on user type (member vs. casual). The data is grouped and visualized in a pie chart to show the proportion of rides for each user type."
+  },
+  {
+    "objectID": "index.html#ride-type-by-rideable",
+    "href": "index.html#ride-type-by-rideable",
+    "title": "Divvy Bike Analysis",
+    "section": "Ride Type By Rideable",
+    "text": "Ride Type By Rideable\nIn this section, we examine ride type based on bike types (classic, electric, docked) and user categories. The data is visualized as a stacked bar chart to highlight usage trends."
+  },
+  {
+    "objectID": "index.html#average-ride-length",
+    "href": "index.html#average-ride-length",
+    "title": "Divvy Bike Analysis",
+    "section": "Average Ride Length",
+    "text": "Average Ride Length"
+  },
+  {
+    "objectID": "index.html#ride-length-by-weekday",
+    "href": "index.html#ride-length-by-weekday",
+    "title": "Divvy Bike Analysis",
+    "section": "Ride Length by Weekday",
+    "text": "Ride Length by Weekday"
+  },
+  {
+    "objectID": "index.html#total-rides-by-weekday",
+    "href": "index.html#total-rides-by-weekday",
+    "title": "Divvy Bike Analysis",
+    "section": "Total Rides By Weekday",
+    "text": "Total Rides By Weekday"
+  },
+  {
+    "objectID": "index.html#total-rides-by-hour",
+    "href": "index.html#total-rides-by-hour",
+    "title": "Divvy Bike Analysis",
+    "section": "Total Rides by Hour",
+    "text": "Total Rides by Hour\n\n\nScale for fill is already present.\nAdding another scale for fill, which will replace the existing scale."
+  },
+  {
+    "objectID": "index.html#total-rides-by-month",
+    "href": "index.html#total-rides-by-month",
+    "title": "Divvy Bike Analysis",
+    "section": "Total Rides by Month",
+    "text": "Total Rides by Month\n\n\nScale for fill is already present.\nAdding another scale for fill, which will replace the existing scale."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "about",
@@ -19,5 +117,12 @@
     "title": "about",
     "section": "Running Code",
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Divvy Bike Analysis",
+    "section": "",
+    "text": "Public bike share (PBS).\nA PBS is an extension of the existing transit system with a network of short-term, self-service bicycle posts in which:\n\nUsers can use bikes by purchasing casual day use or annual memberships,\nUsers can ride bikes for a short distance for one-way trips within a defined service area and Station locations can change overtime based on ridership practices or operation needs.\n\nBike share technology continues to evolve quickly along with other wireless and digital changes. Other recent advancements include systems that do not require docking stations i.e. “smart lock” systems and electric‐assist bikes.\n\nI used 1 year (12 Months) of Divvy Chicago Bike Sharing Data from Jan 2024 to Dec 2024, obtained from Divy Bike .\nThis dataset included 5,667,986 trips, of which 3,127,293 / 55.2% were made by annual or monthly members, and 2,540,693 / 44.8% by casual users.\n\nAlthough this dataset is not a result of a survey, The following missing features could make this analysis more interesting and stronger if were exist.\n\nBike ID,\nUser ID,\nUser Gender,\nUser Age,\nPurpose of trip,\nTrip distance and\nWeather conditions.\n\nI believe some of them are connected to the agreed privacy policy!\nAnyway, let’s load the packages we need for this brief analysis\n\nShow the codeknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(paletteer)\nlibrary(PNWColors) \nscale_colour_paletteer_d(\"PNWColors::Sunset\")\nscale_fill_paletteer_d(\"PNWColors::Sunset\")\ntheme_set(theme_minimal())\n\n\nWe are setting up our system by loading the necessary libraries. These libraries will enable us to perform data manipulation, visualization, and interactive chart creation. ## Reading Data In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the datasets folder."
   }
 ]
