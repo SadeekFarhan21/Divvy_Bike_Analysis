@@ -60,7 +60,7 @@ I believe some of them are connected to the agreed privacy policy!
 
 Anyway, let's load the packages we need for this brief analysis
 
-```{r , class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r setup, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
@@ -73,6 +73,8 @@ library(plotly)
 library(ggplot2)
 library(paletteer)
 library(PNWColors) 
+library(gghighlight)
+library(networkD3)
 scale_colour_paletteer_d("PNWColors::Sunset")
 scale_fill_paletteer_d("PNWColors::Sunset")
 theme_set(theme_minimal())
@@ -81,7 +83,7 @@ We are setting up our system by loading the necessary libraries. These libraries
 ## Reading Data
 In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the `datasets` folder.
 
-```{r , class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r reading all the datasets, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
@@ -104,35 +106,35 @@ december <- read.csv("datasets/202412-divvy-tripdata.csv")
 
 Here, we combine all monthly datasets into a single dataset for easier analysis. Additionally, a `month` column is added to each dataset to identify the month of each ride.
 
-```{r , class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r combining all the datasets, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
 all_data <- bind_rows(
     january |> mutate(month = 1),
-    february |> mutate(month = 2),
-    march |> mutate(month = 3),
-    april |> mutate(month = 4),
-    may |> mutate(month = 5),
-    june |> mutate(month = 6),
+    february |>  mutate(month = 2),
+    march|>  mutate(month = 3),
+    april|>  mutate(month = 4),
+    may|>  mutate(month = 5),
+    june|>  mutate(month = 6),
     july |> mutate(month = 7),
     august |> mutate(month = 8),
     september |> mutate(month = 9),
     october |> mutate(month = 10),
     november |> mutate(month = 11),
-    december |> mutate(month = 12)
+    december|>  mutate(month = 12)
 )
 ```
 
 ## Sample Dataset
 To make our analysis more efficient and focus on a manageable subset of data, we sample 100 records from the combined dataset.
 
-```{r, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r taking a sample, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
-all_data <- all_data |> 
+all_data <- all_data |>
     sample_n(100)
 ```
 
@@ -142,22 +144,23 @@ To enhance our analysis, we derive new columns:
 - **Time of Day**: Categorizes hours into time periods (Night, Morning, Afternoon, Evening).
 - **Season**: Categorizes months into seasons (Winter, Spring, Summer, Fall).
 
-```{r , class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r adding daytime and season, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
-all_data <- all_data |>
-      mutate(hour = hour(started_at)) |>
-      mutate(time_of_day = 
-      case_when (
-            hour %in% 0:5 ~ "Night",
-            hour %in% 6:11 ~ "Morning",
-            hour %in% 12:17 ~ "Afternoon",
-            hour %in% 18:23 ~ "Evening"
-        )
-)
 
-all_data <- all_data |> 
+all_data <- all_data |>
+    mutate(hour = hour(started_at)) |>
+    mutate(time_of_day = 
+    case_when (
+      hour %in% 0:5 ~ "Night",
+      hour %in% 6:11 ~ "Morning",
+      hour %in% 12:17 ~ "Afternoon",
+      hour %in% 18:23 ~ "Evening"
+        )
+    )
+
+all_data <- all_data  |>
     mutate(season = 
     case_when (
         month %in% c(12, 1, 2) ~ "Winter",
@@ -166,14 +169,14 @@ all_data <- all_data |>
         month %in% c(9, 10, 11) ~ "Fall"
     )
 )
-sample_data <- all_data |> 
+sample_data <- all_data  |>
     sample_n(100)
 ```
 
 ## Remove Data
 We clean up our workspace by removing the individual monthly datasets, which are no longer needed after combining.
 
-```{r , class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
+```{r removing memory space, class.source="Fragment Mono", results='hide', warning=FALSE, message=FALSE}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
@@ -182,7 +185,7 @@ rm(january, february, march, april, may, june, july, august, september, october,
 
 ## Ride type by user
 This section analyzes ride types based on user type (member vs. casual). The data is grouped and visualized in a pie chart to show the proportion of rides for each user type.
-```{r}
+```{r, ride type by user}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
@@ -232,7 +235,7 @@ ride_type_by_user |>
 ## Ride Type By Rideable
 In this section, we examine ride type based on bike types (classic, electric, docked) and user categories. The data is visualized as a stacked bar chart to highlight usage trends.
 
-```{r}
+```{r, ride type by rideable}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| fold: true
@@ -244,13 +247,11 @@ ride_type_by_rideable <- sample_data |>
 ggplot(ride_type_by_rideable, aes(x = rideable_type, y = count, fill = member_casual)) +
     geom_bar(stat = "identity", position = "stack", width = 0.7) +
     labs(
-        title = "Ride Type by Bike Type",
         x = "Bike Type",
         y = "Count",
         fill = "User Type"
     ) +
-    theme_minimal(base_size = 15) +
-    
+    theme_void(base_size = 15) +
     theme(
         plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
@@ -264,7 +265,7 @@ ggplot(ride_type_by_rideable, aes(x = rideable_type, y = count, fill = member_ca
 
 
 
-```{r}
+```{r, average ride length}
 ## Average Ride Length
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -277,7 +278,6 @@ ggplot(average_ride_length, aes(x = member_casual, y = average_ride_length, fill
     geom_bar(stat = "identity", width = 0.7) +
     geom_text(aes(label = round(average_ride_length, 1)), vjust = -0.5, size = 5) +
     labs(
-        title = "Average Ride Length by User Type",
         x = "User Type",
         y = "Average Ride Length (minutes)"
     ) +
@@ -285,21 +285,20 @@ ggplot(average_ride_length, aes(x = member_casual, y = average_ride_length, fill
 ```
 
 ## Ride Length by Weekday
-```{r, height = 400, width = 800}
+```{r ride length by weekday, height = 500, width = 800}
 #| code-fold: true
 #| code-summary: "Show the code"
 ride_length_by_weekday <- sample_data |>
     mutate(ride_length = as.numeric(difftime(ended_at, started_at, units = "mins")),
            day_of_week = weekdays(as.Date(started_at))) |>
     group_by(day_of_week) |>
-    summarise(average_ride_length = mean(ride_length, na.rm = TRUE)) |>
+    summarise(average_ride_length = mean(ride_length, na.rm = TRUE)) |> 
     mutate(day_of_week = fct_relevel(day_of_week, c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
 
 ggplot(ride_length_by_weekday, aes(x = day_of_week, y = average_ride_length, fill = day_of_week)) +
     geom_bar(stat = "identity", width = 0.7) +
     geom_text(aes(label = round(average_ride_length, 1)), vjust = -0.5, size = 5) +
     labs(
-        title = "Average Ride Length by Day of the Week",
         x = "Day of the Week",
         y = "Average Ride Length (minutes)"
     ) +
@@ -307,8 +306,7 @@ ggplot(ride_length_by_weekday, aes(x = day_of_week, y = average_ride_length, fil
 ```
 
 ## Total Rides By Weekday
-```{r}
-
+```{r, total rides by weekday}
 total_rides_by_weekday <- sample_data |>
     mutate(day_of_week = weekdays(as.Date(started_at))) |>
     group_by(day_of_week) |>
@@ -320,7 +318,6 @@ total_rides_by_weekday |>
     geom_bar(stat = "identity", width = 0.7) +
     geom_text(aes(label = total_rides), vjust = -0.5, size = 5) +
     labs(
-        title = "Total Rides by Day of the Week",
         x = "Day of the Week",
         y = "Total Rides"
     ) +
@@ -328,8 +325,7 @@ total_rides_by_weekday |>
 ```
 
 ## Total Rides by Hour
-```{r}
-
+```{r, total rides by hour}
 total_rides_by_hour <- sample_data |>
     mutate(hour = hour(started_at)) |>
     group_by(hour, time_of_day) |>
@@ -341,7 +337,6 @@ total_rides_by_hour |>
     scale_x_continuous(breaks = 0:23) +
     scale_fill_brewer(palette = "Set1") +
     labs(
-        title = "Total Rides by Hour of the Day",
         x = "Hour of the Day",
         y = "Total Rides",
         fill = "Time of Day"
@@ -351,7 +346,7 @@ total_rides_by_hour |>
 
 
 ## Total Rides by Month
-```{r}
+```{r, total rides by month}
 
 total_rides_by_month <- sample_data |>
     mutate(month = month(started_at, label = TRUE)) |>
@@ -363,7 +358,6 @@ total_rides_by_month |>
     geom_bar(stat = "identity", width = 0.7) +
     scale_fill_brewer(palette = "Set1") +
     labs(
-        title = "Total Rides by Month",
         x = "Month",
         y = "Total Rides",
         fill = "Season"
@@ -371,7 +365,7 @@ total_rides_by_month |>
 ```
 
 
-```{r}
+```{r average ride length by season}
 
 average_ride_length_by_season <- sample_data |>
     mutate(ride_length = as.numeric(difftime(ended_at, started_at, units = "mins"))) |>
@@ -382,9 +376,43 @@ ggplot(average_ride_length_by_season, aes(x = season, y = average_ride_length, f
     geom_bar(stat = "identity", width = 0.7) +
     geom_text(aes(label = round(average_ride_length, 1)), vjust = -0.5, size = 5, color = "white") +
     labs(
-        title = "Average Ride Length by Season",
         x = "Season",
         y = "Average Ride Length (minutes)"
     ) +
     scale_fill_manual(values = pnw_palette("Sunset", n = 4))
 ```
+
+## Top 10 Starting Station
+```{r top 10 starting station}
+sample_data |>
+  mutate(start_station_name = fct_lump(start_station_name, 10)) |> 
+  count(start_station_id, start_station_name, name = "counts", sort = T) |> 
+  filter(!is.na(start_station_name),
+         !is.na(start_station_id),
+         start_station_name != "Other") |>
+  mutate(start_station_name = fct_reorder(start_station_name, counts)) |>
+  top_n(n=5) |>
+  ggplot(aes(x = start_station_name, y = counts, fill = start_station_name)) +
+  geom_bar(stat = "identity") +
+  coord_flip() + 
+  scale_fill_manual(values = pnw_palette("Sunset", n = 13))
+```
+
+## Top 10 Ending Stations
+
+```{r, top 10 ending station}
+sample_data |>
+    mutate(end_station_name = fct_lump(end_station_name, 10)) |> 
+    count(end_station_id, end_station_name, name = "counts", sort = T) |> 
+    filter(!is.na(end_station_name),
+                 !is.na(end_station_id),
+                 end_station_name != "Other") |>
+    mutate(end_station_name = fct_reorder(end_station_name, counts)) |> 
+    top_n(n = 5) |>
+    ggplot(aes(x = end_station_name, y = counts, fill = end_station_name)) +
+    geom_bar(stat = "identity") +
+    coord_flip() + 
+    scale_fill_manual(values = pnw_palette("Sunset", n = 13))
+
+```
+
