@@ -482,7 +482,9 @@ The map displays markers at the specified locations with popups showing the coun
 **Observations:**
 
 -   Most of the Locations are around the downtown and UChicago-Northwestern area.
--   The most popular starting and ending stations are very to each other. \## Top 10 Ending Stations
+-   The most popular starting and ending stations are very to each other. 
+
+## Top 10 Ending Stations
 
 The top 10 ending stations will be visualized on a map to show their locations and the number of rides ending at each station.
 The code uses the `leaflet` library to create an interactive map with clustered markers for the top 10 ending locations of bike rides.
