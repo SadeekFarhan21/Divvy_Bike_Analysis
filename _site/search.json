@@ -1,121 +1,58 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Divvy Bike Analysis",
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "About Me",
     "section": "",
-    "text": "Public bike share (PBS).\nA PBS is an extension of the existing transit system with a network of short-term, self-service bicycle posts in which:\n\nUsers can use bikes by purchasing casual day use or annual memberships,\nUsers can ride bikes for a short distance for one-way trips within a defined service area and Station locations can change overtime based on ridership practices or operation needs.\n\nBike share technology continues to evolve quickly along with other wireless and digital changes. Other recent advancements include systems that do not require docking stations i.e. “smart lock” systems and electric‐assist bikes.\n\nI used 1 year (12 Months) of Divvy Chicago Bike Sharing Data from Jan 2024 to Dec 2024, obtained from Divy Bike .\nThis dataset included 5,667,986 trips, of which 3,127,293 / 55.2% were made by annual or monthly members, and 2,540,693 / 44.8% by casual users.\n\nAlthough this dataset is not a result of a survey, The following missing features could make this analysis more interesting and stronger if were exist.\n\nBike ID,\nUser ID,\nUser Gender,\nUser Age,\nPurpose of trip,\nTrip distance and\nWeather conditions.\n\nI believe some of them are connected to the agreed privacy policy!\nAnyway, let’s load the packages we need for this brief analysis\n\nShow the codeknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(paletteer)\nlibrary(PNWColors) \nlibrary(gghighlight)\nlibrary(networkD3)\nscale_colour_paletteer_d(\"PNWColors::Sunset\")\nscale_fill_paletteer_d(\"PNWColors::Sunset\")\ntheme_set(theme_minimal())\n\n\nWe are setting up our system by loading the necessary libraries. These libraries will enable us to perform data manipulation, visualization, and interactive chart creation. ## Reading Data In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the datasets folder."
+    "text": "Math, Physics and CS Student\nStudent Software Engineer\n\n\nHello, I’m Farhan Sadeek, a student at The Ohio State University. My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence. As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges. A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios.\n\n\n\n\n\n\n\nJanuary 2024 - Present\nThe Ohio State University\nI will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best. Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.\n\n\n\nJune 2023 - Present\nSpectrum\nI collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction. Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.\n\n\n\nAugust 2021 - Present\nGoogle AI\nI leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance. Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes. Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.\n\n\n\nMay 2022 - August 2022\nHarvard University\nDeveloped Dr. Kane’s Harvard Class GOV 1005 with R coding language along with other student researchers. Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country.\n\n\n\n\n\n\n\nMay 2027\nRelevant Coursework:\n\nMath 4580: Abstract Algebra I\n\n\n\nMath 4547: Real Analysis I\nMath 4573: Number Theory\nStat 4202: Mathematical Statistics II\nPhysics 2301: Relativistic Mechanics\nMath 4512: Partial Differential Equations\nStat 4201: Mathematical Statistics I\nStat 3470: Engineering Statistics\nMath 3345: Mathematical Proofs\nMath 2568: Linear Algebra\nMath 2153: Multivariable Calculus\nPhysics 2300: Classical Mechanics\nCSE 2321: Discrete Math\nCSE 2231: Software Development\nCSE 2221: Software Components\n\n\n\n\n\n\n\n\n\nAs a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges. Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques. I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking. Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.\n\n\n\nAs a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS. Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights. The association also provided networking opportunities with industry professionals and experts in the field.\n\n\n\nThe Artificial Intelligence Club was crucial to my career development. Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow. I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications. The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications.\n\n\n\n\n\n\n\n\nPython: 20,000 lines\nC++: 20,000 lines\nJava: 10,000 lines\nHTML: 10,000 lines\nCSS: 10,000 lines\nJavascript: 3,000 lines\nNode JS: 1,000 lines\nReact.js: 1,000 lines\nDjango: 3,000 lines\nGit: &gt; 3 years\n\n\n\n\n\nSeaborn: 10,000 lines\nTableau: &gt; 2 years\nPyTorch: 5,000 lines\nTensorflow: 5,000 lines\nScikit-Learn: 3,000 lines\nSQL: 3,000 lines\nDocker: &lt; 1 year\nAWS/Azure: 1 year\n\n\n\n\n\n\nEmail: farhansadeek019@gmail.com\nLinkedIn: farhansadeekde110\nX: SadeekFarhan21"
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Divvy Bike Analysis",
+    "objectID": "about_me.html#about-me",
+    "href": "about_me.html#about-me",
+    "title": "About Me",
     "section": "",
-    "text": "Public bike share (PBS).\nA PBS is an extension of the existing transit system with a network of short-term, self-service bicycle posts in which:\n\nUsers can use bikes by purchasing casual day use or annual memberships,\nUsers can ride bikes for a short distance for one-way trips within a defined service area and Station locations can change overtime based on ridership practices or operation needs.\n\nBike share technology continues to evolve quickly along with other wireless and digital changes. Other recent advancements include systems that do not require docking stations i.e. “smart lock” systems and electric‐assist bikes.\n\nI used 1 year (12 Months) of Divvy Chicago Bike Sharing Data from Jan 2024 to Dec 2024, obtained from Divy Bike .\nThis dataset included 5,667,986 trips, of which 3,127,293 / 55.2% were made by annual or monthly members, and 2,540,693 / 44.8% by casual users.\n\nAlthough this dataset is not a result of a survey, The following missing features could make this analysis more interesting and stronger if were exist.\n\nBike ID,\nUser ID,\nUser Gender,\nUser Age,\nPurpose of trip,\nTrip distance and\nWeather conditions.\n\nI believe some of them are connected to the agreed privacy policy!\nAnyway, let’s load the packages we need for this brief analysis\n\nShow the codeknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(plotly)\nlibrary(ggplot2)\nlibrary(paletteer)\nlibrary(PNWColors) \nlibrary(gghighlight)\nlibrary(networkD3)\nscale_colour_paletteer_d(\"PNWColors::Sunset\")\nscale_fill_paletteer_d(\"PNWColors::Sunset\")\ntheme_set(theme_minimal())\n\n\nWe are setting up our system by loading the necessary libraries. These libraries will enable us to perform data manipulation, visualization, and interactive chart creation. ## Reading Data In this section, we are reading the Divvy bike data for all months of 2024. Each dataset represents trips taken in a specific month. The data is stored in CSV files located in the datasets folder."
+    "text": "Hello, I’m Farhan Sadeek, a student at The Ohio State University. My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence. As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges. A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios."
   },
   {
-    "objectID": "index.html#combining-the-datasets",
-    "href": "index.html#combining-the-datasets",
-    "title": "Divvy Bike Analysis",
-    "section": "Combining the datasets",
-    "text": "Combining the datasets\nHere, we combine all monthly datasets into a single dataset for easier analysis. Additionally, a month column is added to each dataset to identify the month of each ride."
-  },
-  {
-    "objectID": "index.html#sample-dataset",
-    "href": "index.html#sample-dataset",
-    "title": "Divvy Bike Analysis",
-    "section": "Sample Dataset",
-    "text": "Sample Dataset\nTo make our analysis more efficient and focus on a manageable subset of data, we sample 100 records from the combined dataset."
-  },
-  {
-    "objectID": "index.html#combining-data",
-    "href": "index.html#combining-data",
-    "title": "Divvy Bike Analysis",
-    "section": "Combining Data",
-    "text": "Combining Data\nTo enhance our analysis, we derive new columns: - Hour: Extracts the hour from the start time. - Time of Day: Categorizes hours into time periods (Night, Morning, Afternoon, Evening). - Season: Categorizes months into seasons (Winter, Spring, Summer, Fall)."
-  },
-  {
-    "objectID": "index.html#remove-data",
-    "href": "index.html#remove-data",
-    "title": "Divvy Bike Analysis",
-    "section": "Remove Data",
-    "text": "Remove Data\nWe clean up our workspace by removing the individual monthly datasets, which are no longer needed after combining."
-  },
-  {
-    "objectID": "index.html#ride-type-by-user",
-    "href": "index.html#ride-type-by-user",
-    "title": "Divvy Bike Analysis",
-    "section": "Ride type by user",
-    "text": "Ride type by user\nThis section analyzes ride types based on user type (member vs. casual). The data is grouped and visualized in a pie chart to show the proportion of rides for each user type."
-  },
-  {
-    "objectID": "index.html#ride-type-by-rideable",
-    "href": "index.html#ride-type-by-rideable",
-    "title": "Divvy Bike Analysis",
-    "section": "Ride Type By Rideable",
-    "text": "Ride Type By Rideable\nIn this section, we examine ride type based on bike types (classic, electric, docked) and user categories. The data is visualized as a stacked bar chart to highlight usage trends."
-  },
-  {
-    "objectID": "index.html#ride-length-by-weekday",
-    "href": "index.html#ride-length-by-weekday",
-    "title": "Divvy Bike Analysis",
-    "section": "Ride Length by Weekday",
-    "text": "Ride Length by Weekday"
-  },
-  {
-    "objectID": "index.html#total-rides-by-weekday",
-    "href": "index.html#total-rides-by-weekday",
-    "title": "Divvy Bike Analysis",
-    "section": "Total Rides By Weekday",
-    "text": "Total Rides By Weekday"
-  },
-  {
-    "objectID": "index.html#total-rides-by-hour",
-    "href": "index.html#total-rides-by-hour",
-    "title": "Divvy Bike Analysis",
-    "section": "Total Rides by Hour",
-    "text": "Total Rides by Hour\n\n\nScale for fill is already present.\nAdding another scale for fill, which will replace the existing scale."
-  },
-  {
-    "objectID": "index.html#total-rides-by-month",
-    "href": "index.html#total-rides-by-month",
-    "title": "Divvy Bike Analysis",
-    "section": "Total Rides by Month",
-    "text": "Total Rides by Month\n\n\nScale for fill is already present.\nAdding another scale for fill, which will replace the existing scale."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "about",
+    "objectID": "about_me.html#professional-journey",
+    "href": "about_me.html#professional-journey",
+    "title": "About Me",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "January 2024 - Present\nThe Ohio State University\nI will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best. Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.\n\n\n\nJune 2023 - Present\nSpectrum\nI collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction. Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.\n\n\n\nAugust 2021 - Present\nGoogle AI\nI leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance. Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes. Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.\n\n\n\nMay 2022 - August 2022\nHarvard University\nDeveloped Dr. Kane’s Harvard Class GOV 1005 with R coding language along with other student researchers. Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country."
   },
   {
-    "objectID": "about.html#quarto",
-    "href": "about.html#quarto",
-    "title": "about",
+    "objectID": "about_me.html#education",
+    "href": "about_me.html#education",
+    "title": "About Me",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "May 2027\nRelevant Coursework:\n\nMath 4580: Abstract Algebra I\n\n\n\nMath 4547: Real Analysis I\nMath 4573: Number Theory\nStat 4202: Mathematical Statistics II\nPhysics 2301: Relativistic Mechanics\nMath 4512: Partial Differential Equations\nStat 4201: Mathematical Statistics I\nStat 3470: Engineering Statistics\nMath 3345: Mathematical Proofs\nMath 2568: Linear Algebra\nMath 2153: Multivariable Calculus\nPhysics 2300: Classical Mechanics\nCSE 2321: Discrete Math\nCSE 2231: Software Development\nCSE 2221: Software Components"
   },
   {
-    "objectID": "about.html#running-code",
-    "href": "about.html#running-code",
-    "title": "about",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "about_me.html#outside-school-work",
+    "href": "about_me.html#outside-school-work",
+    "title": "About Me",
+    "section": "",
+    "text": "As a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges. Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques. I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking. Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.\n\n\n\nAs a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS. Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights. The association also provided networking opportunities with industry professionals and experts in the field.\n\n\n\nThe Artificial Intelligence Club was crucial to my career development. Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow. I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications. The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications."
   },
   {
-    "objectID": "index.html#top-10-starting-station",
-    "href": "index.html#top-10-starting-station",
-    "title": "Divvy Bike Analysis",
-    "section": "Top 10 Starting Station",
-    "text": "Top 10 Starting Station\n\n\nSelecting by counts"
+    "objectID": "about_me.html#skills",
+    "href": "about_me.html#skills",
+    "title": "About Me",
+    "section": "",
+    "text": "Python: 20,000 lines\nC++: 20,000 lines\nJava: 10,000 lines\nHTML: 10,000 lines\nCSS: 10,000 lines\nJavascript: 3,000 lines\nNode JS: 1,000 lines\nReact.js: 1,000 lines\nDjango: 3,000 lines\nGit: &gt; 3 years\n\n\n\n\n\nSeaborn: 10,000 lines\nTableau: &gt; 2 years\nPyTorch: 5,000 lines\nTensorflow: 5,000 lines\nScikit-Learn: 3,000 lines\nSQL: 3,000 lines\nDocker: &lt; 1 year\nAWS/Azure: 1 year"
   },
   {
-    "objectID": "index.html#top-10-ending-stations",
-    "href": "index.html#top-10-ending-stations",
-    "title": "Divvy Bike Analysis",
-    "section": "Top 10 Ending Stations",
-    "text": "Top 10 Ending Stations\n\n\nSelecting by counts"
+    "objectID": "about_me.html#projects",
+    "href": "about_me.html#projects",
+    "title": "About Me",
+    "section": "",
+    "text": "Project One\nReal Time Data Analytics Dashboard\nGithub | Live Demo\n\n\n\nProject Two\nReal Time Weather Application\nGithub | Live Demo\n\n\n\nProject Three\nPersonal Portfolio Website\nGithub | Live Demo"
+  },
+  {
+    "objectID": "about_me.html#contact-me",
+    "href": "about_me.html#contact-me",
+    "title": "About Me",
+    "section": "",
+    "text": "Email: farhansadeek019@gmail.com\nLinkedIn: farhansadeekde110\nX: SadeekFarhan21"
   }
 ]

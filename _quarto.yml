@@ -6,8 +6,17 @@ website:
   title: "Divvy Bike Analysis"
   site-url: https://divvy-bike-analysis.netlify.app
   repo-url: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis
-  bread-crumbs: true
+  favicon: Divvy_Logo.png
   navbar:
+    left:
+      - text: "Data Source"
+        href: about.qmd
+      - text: "About Me"
+        href: about_me.qmd
     right:
       - icon: "github"
         href: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis
+      - icon: "linkedin"
+        href: https://www.linkedin.com/in/farhansadeekde110/
+      - icon: "twitter"
+        href: https://twitter.com/SadeekFarhan21
