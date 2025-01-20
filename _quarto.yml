@@ -8,11 +8,6 @@ website:
   repo-url: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis
   favicon: Divvy_Logo.png
   navbar:
-    left:
-      - text: "Data Source"
-        href: about.qmd
-      - text: "About Me"
-        href: about_me.qmd
     right:
       - icon: "github"
         href: https://github.com/SadeekFarhan21/Divvy_Bike_Analysis
