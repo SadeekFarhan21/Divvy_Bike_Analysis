@@ -1,22 +1,29 @@
 ---
-page-layout: article
 format: 
   html:
     toc: true
     theme: litera
-execute:
-  echo: true
-  warning: false
-mainfont: Helvetica
-editor_options:
-  markdown:
-    wrap: sentence
-    canonical: true
 language: 
   section-title-footnotes: Example Footnotes
 page-footer: |
   © 2025 Farhan Sadeek. All Rights Reserved.
 ---
+
+```{=html}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fragment+Mono:ital@0;1&display=swap');
+
+p {
+  font-family: 'Funnel Sans';
+}
+
+pre, code {
+  font-family: 'Fragment Mono';
+  font-size: 14px;
+}
+</style>
+```
 
 # Farhan Sadeek
 
@@ -25,10 +32,7 @@ Student Software Engineer
 
 ## About Me
 
-Hello, I'm Farhan Sadeek, a student at The Ohio State University.
-My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence.
-As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges.
-A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios.
+Hello, I'm Farhan Sadeek, a student at The Ohio State University. My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence. As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges. A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios.
 
 ## Professional Journey
 
@@ -39,33 +43,28 @@ A dedication to understanding marks my academic journey the intricacies of compu
 **January 2024 - Present**\
 The Ohio State University
 
-I will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best.
-Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.
+I will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best. Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.
 
 #### Technical Analyst
 
 **June 2023 - Present**\
 Spectrum
 
-I collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction.
-Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.
+I collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction. Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.
 
 #### Data Analyst
 
 **August 2021 - Present**\
 Google AI
 
-I leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance.
-Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes.
-Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.
+I leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance. Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes. Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.
 
 #### Data Science Intern
 
 **May 2022 - August 2022**\
 Harvard University
 
-Developed Dr. Kane's Harvard Class GOV 1005 with R coding language along with other student researchers.
-Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country.
+Developed Dr. Kane's Harvard Class GOV 1005 with R coding language along with other student researchers. Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country.
 
 ## Education
 
@@ -113,23 +112,15 @@ May 2027
 
 #### Competitive Programming Club
 
-As a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges.
-Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques.
-I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking.
-Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.
+As a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges. Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques. I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking. Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.
 
 #### Big Data and Analytics Association
 
-As a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS.
-Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights.
-The association also provided networking opportunities with industry professionals and experts in the field.
+As a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS. Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights. The association also provided networking opportunities with industry professionals and experts in the field.
 
 #### Artificial Intelligence Club
 
-The Artificial Intelligence Club was crucial to my career development.
-Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow.
-I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications.
-The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications.
+The Artificial Intelligence Club was crucial to my career development. Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow. I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications. The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications.
 
 ## Skills
 

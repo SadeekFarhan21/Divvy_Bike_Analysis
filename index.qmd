@@ -23,8 +23,11 @@ page-footer: |
 
 ```{=html}
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fragment+Mono:ital@0;1&display=swap');
+
 p {
-  font-family: 'Helvetica';
+  font-family: 'Funnel Sans';
 }
 
 pre, code {
@@ -85,7 +88,7 @@ Here, `tidyverse` is for analysis, `paletteer` is for creating custom color pall
 
 Here, we used `read.csv` function to read all 12 months into the dataset in R.
 
-```{r, message=FALSE, warning=FALSE, message=FALSE}
+```{r reading data from file, message=FALSE, warning=FALSE, message=FALSE}
 january <- read.csv("datasets/202401-divvy-tripdata.csv")
 february <- read.csv("datasets/202402-divvy-tripdata.csv")
 march <- read.csv("datasets/202403-divvy-tripdata.csv")
@@ -126,7 +129,7 @@ df <- bind_rows(
 
 To enhance our analysis, we derive new columns such as `time_of_day` using the `hour` function from the `lubridate` package, and `season` using the `month` function.
 
-```{r adding daytime and season}
+```{r adding daytime}
 df <- df |>
     mutate(hour = hour(started_at)) |>
     mutate(time_of_day = 
@@ -141,7 +144,7 @@ df <- df |>
 
 Simlarly, we derive the `season` column using the `month` from the dataframe.
 
-```{r}
+```{r adding season}
 df <- df  |>
     mutate(season = 
     case_when (
@@ -247,7 +250,7 @@ ggplot(ride_type_by_rideable, aes(x = rideable_type, y = count, fill = member_ca
         y = "Count",
         fill = "User Type"
     ) +
-    theme_void(base_size = 15) +
+    theme_minimal(base_size = 15) +
     scale_fill_manual(values = pnw_palette("Sunset", n = 2), labels = c("Casual", "Member"))  
 ```
 
@@ -276,7 +279,8 @@ ggplot(average_ride_length, aes(x = member_casual, y = average_ride_length, fill
   scale_fill_manual(values = pnw_palette("Sunset", n = 2), labels = c("Casual", "Member")) +
     labs(
         x = "User Type",
-        y = "Average Ride Length (minutes)"
+        y = "Average Ride Length (minutes)",
+        fill = "Member Type"
     ) +
     theme_minimal(base_size = 15)
 ```
