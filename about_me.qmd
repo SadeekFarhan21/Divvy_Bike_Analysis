@@ -3,12 +3,6 @@ page-layout: article
 format: 
   html:
     toc: true
-    code-copy: true
-    code-fold: true
-    code-wrap: true
-    code-overflow: wrap
-    code-tools: true
-    tidy: true
     theme: litera
 execute:
   echo: true

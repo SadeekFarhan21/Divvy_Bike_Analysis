@@ -1,61 +1,5 @@
 [
   {
-    "objectID": "about_me.html",
-    "href": "about_me.html",
-    "title": "",
-    "section": "",
-    "text": "Code"
-  },
-  {
-    "objectID": "about_me.html#about-me",
-    "href": "about_me.html#about-me",
-    "title": "",
-    "section": "About Me",
-    "text": "About Me\nHello, I’m Farhan Sadeek, a student at The Ohio State University. My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence. As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges. A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios."
-  },
-  {
-    "objectID": "about_me.html#professional-journey",
-    "href": "about_me.html#professional-journey",
-    "title": "",
-    "section": "Professional Journey",
-    "text": "Professional Journey\n\nExperience\n\nUndergraduate Research Assistant\nJanuary 2024 - Present\nThe Ohio State University\nI will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best. Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.\n\n\nTechnical Analyst\nJune 2023 - Present\nSpectrum\nI collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction. Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.\n\n\nData Analyst\nAugust 2021 - Present\nGoogle AI\nI leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance. Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes. Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.\n\n\nData Science Intern\nMay 2022 - August 2022\nHarvard University\nDeveloped Dr. Kane’s Harvard Class GOV 1005 with R coding language along with other student researchers. Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country."
-  },
-  {
-    "objectID": "about_me.html#education",
-    "href": "about_me.html#education",
-    "title": "",
-    "section": "Education",
-    "text": "Education\n\nOhio State University\nMay 2027\nRelevant Coursework:\n\nMath 4580: Abstract Algebra I\n\n\n\nMath 4547: Real Analysis I\nMath 4573: Number Theory\nStat 4202: Mathematical Statistics II\nPhysics 2301: Relativistic Mechanics\nMath 4512: Partial Differential Equations\nStat 4201: Mathematical Statistics I\nStat 3470: Engineering Statistics\nMath 3345: Mathematical Proofs\nMath 2568: Linear Algebra\nMath 2153: Multivariable Calculus\nPhysics 2300: Classical Mechanics\nCSE 2321: Discrete Math\nCSE 2231: Software Development\nCSE 2221: Software Components"
-  },
-  {
-    "objectID": "about_me.html#outside-school-work",
-    "href": "about_me.html#outside-school-work",
-    "title": "",
-    "section": "Outside School & Work",
-    "text": "Outside School & Work\n\nActivities & Organizations\n\nCompetitive Programming Club\nAs a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges. Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques. I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking. Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.\n\n\nBig Data and Analytics Association\nAs a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS. Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights. The association also provided networking opportunities with industry professionals and experts in the field.\n\n\nArtificial Intelligence Club\nThe Artificial Intelligence Club was crucial to my career development. Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow. I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications. The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications."
-  },
-  {
-    "objectID": "about_me.html#skills",
-    "href": "about_me.html#skills",
-    "title": "",
-    "section": "Skills",
-    "text": "Skills\n\nSoftware Development\n\nPython: 20,000 lines\nC++: 20,000 lines\nJava: 10,000 lines\nHTML: 10,000 lines\nCSS: 10,000 lines\nJavascript: 3,000 lines\nNode JS: 1,000 lines\nReact.js: 1,000 lines\nDjango: 3,000 lines\nGit: &gt; 3 years\n\n\n\nData Science & Artificial Intelligence\n\nSeaborn: 10,000 lines\nTableau: &gt; 2 years\nPyTorch: 5,000 lines\nTensorflow: 5,000 lines\nScikit-Learn: 3,000 lines\nSQL: 3,000 lines\nDocker: &lt; 1 year\nAWS/Azure: 1 year"
-  },
-  {
-    "objectID": "about_me.html#projects",
-    "href": "about_me.html#projects",
-    "title": "About Me",
-    "section": "",
-    "text": "Project One\nReal Time Data Analytics Dashboard\nGithub | Live Demo\n\n\n\nProject Two\nReal Time Weather Application\nGithub | Live Demo\n\n\n\nProject Three\nPersonal Portfolio Website\nGithub | Live Demo"
-  },
-  {
-    "objectID": "about_me.html#contact-me",
-    "href": "about_me.html#contact-me",
-    "title": "",
-    "section": "Contact Me",
-    "text": "Contact Me\n\nEmail: farhansadeek019@gmail.com\nLinkedIn: farhansadeekde110\nX: SadeekFarhan21"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Divvy Bike Analysis",
@@ -89,6 +33,13 @@
     "title": "Divvy Bike Analysis",
     "section": "Creating New Columns",
     "text": "Creating New Columns\nTo enhance our analysis, we derive new columns such as time_of_day using the hour function from the lubridate package, and season using the month function.\n\n\nCode\ndf &lt;- df |&gt;\n    mutate(hour = hour(started_at)) |&gt;\n    mutate(time_of_day = \n    case_when (\n      hour %in% 0:5 ~ \"Night\",\n      hour %in% 6:11 ~ \"Morning\",\n      hour %in% 12:17 ~ \"Afternoon\",\n      hour %in% 18:23 ~ \"Evening\"\n        )\n    )\n\n\nSimlarly, we derive the season column using the month from the dataframe.\n\n\nCode\ndf &lt;- df  |&gt;\n    mutate(season = \n    case_when (\n        month %in% c(12, 1, 2) ~ \"Winter\",\n        month %in% c(3, 4, 5) ~ \"Spring\",\n        month %in% c(6, 7, 8) ~ \"Summer\",\n        month %in% c(9, 10, 11) ~ \"Fall\"\n    )\n)"
+  },
+  {
+    "objectID": "index.html#ride-type-by-rider",
+    "href": "index.html#ride-type-by-rider",
+    "title": "Divvy Bike Analysis",
+    "section": "Ride Type by Rider",
+    "text": "Ride Type by Rider\n\n\nCode\nride_type_by_user &lt;- df |&gt;\n    group_by(member_casual) |&gt;\n    summarise(count = n()) |&gt;\n    mutate(\n        proportion = count / sum(count),\n        percentage = count / sum(count) * 100,\n    )\n\nride_type_by_user |&gt;\n    mutate(\n        start = lag(proportion, default = 0) * 2 * pi,\n        end = cumsum(proportion) * 2 * pi,\n    ) |&gt;\n    ggplot() +\n    ggforce::geom_arc_bar(\n        aes(\n            x0 = 0, y0 = 0,\n            r0 = 0.7, r = 1,\n            start = start, \n            end = end,\n            fill = member_casual  # Ensure 'fill' is mapped to a variable\n        )\n    ) +\n    annotate(\n      'text',  \n      x = 0,\n      y = 0,\n      label = paste0(round(nrow(df) / 1000000, 2), \"M\\nTotal\\nRides\"),\n      size = 7,\n      lineheight = 1\n    ) +\n    coord_equal(expand = FALSE, xlim = c(-1.1, 1.1), ylim = c(-1.1, 1.1)) +\n    theme_void(base_size = 16) +\n    labs(\n        fill = \"Membership Type\"  # Add a meaningful label for the legend\n    ) +\n    theme(\n        legend.position = \"right\",  # Place the legend on the right\n        legend.margin = margin(t = 1, b = 0.5, unit = 'cm'), \n        legend.text = element_text(size = 15)\n    ) +\n    scale_fill_manual(\n        values = pnw_palette(\"Sunset\", n = 2),\n        labels = c(\"Casual\", \"Member\")  # Custom labels for legend categories\n    )\n\n\n\n\n\n\n\n\n\nObservations:\n\n55.2% of rides were made by members, while 44.8% were made by casual users."
   },
   {
     "objectID": "index.html#ride-type-by-rideable",
@@ -147,10 +98,52 @@
     "text": "Top 10 Ending Stations\n\n\nCode\ndf |&gt;\n    mutate(end_station_name = fct_lump(end_station_name, 10)) |&gt; \n    count(end_station_id, end_station_name, name = \"counts\", sort = T) |&gt; \n    filter(!is.na(end_station_name),\n                 !is.na(end_station_id),\n                 end_station_name != \"Other\") |&gt;\n    mutate(end_station_name = fct_reorder(end_station_name, counts)) |&gt; \n    top_n(n = 11) |&gt;\n    slice(-1) |&gt;\n    ggplot(aes(x = end_station_name, y = counts, fill = end_station_name)) +\n    geom_bar(stat = \"identity\") +\n    coord_flip() + \n  theme(legend.position = \"none\") +\n  labs(y = \"Count\", x = \"End Stations\")+\n  scale_fill_manual(values = pnw_palette(\"Sunset\", n = 10))\n\n\n\n\n\n\n\n\n\nLet’s look at them on the map.\n\n\nCode\ntop_end_location &lt;- df |&gt;\n  group_by(end_lat, end_lng) |&gt;\n  summarise(counts = n(), .groups = 'drop') |&gt;\n  slice_max(order_by = counts, n = 10)\n\nleaflet(top_end_location) |&gt;\n  addTiles() |&gt;\n  addMarkers(lng = ~end_lng, lat = ~end_lat, popup = ~counts, clusterOptions = markerClusterOptions())\n\n\n\n\n\n\n The first part of the code uses the ggplot2 library to create a horizontal bar plot of the top end stations by count. It groups the data by end_station_name, calculates the counts, and then plots these counts with bars filled by the station names, flipping the coordinates for better readability. The second part of the code uses the leaflet library to create an interactive map showing the top 10 end locations based on counts. It groups the data by latitude and longitude, calculates the counts, and then adds markers to the map at these locations, with popups displaying the counts and clustering options enabled for better visualization.\nObservations:\n\nMost of the Locations are around the downtown and UChicago-Northwestern area.\nThe most popular starting and ending stations are very to each other."
   },
   {
-    "objectID": "index.html#ride-type-by-rider",
-    "href": "index.html#ride-type-by-rider",
-    "title": "Divvy Bike Analysis",
-    "section": "Ride Type by Rider",
-    "text": "Ride Type by Rider\n\n\nCode\nride_type_by_user &lt;- df |&gt;\n    group_by(member_casual) |&gt;\n    summarise(count = n()) |&gt;\n    mutate(\n        proportion = count / sum(count),\n        percentage = count / sum(count) * 100,\n    )\n\nride_type_by_user |&gt;\n    mutate(\n        start = lag(proportion, default = 0) * 2 * pi,\n        end = cumsum(proportion) * 2 * pi,\n    ) |&gt;\n    ggplot() +\n    ggforce::geom_arc_bar(\n        aes(\n            x0 = 0, y0 = 0,\n            r0 = 0.7, r = 1,\n            start = start, \n            end = end,\n            fill = member_casual  # Ensure 'fill' is mapped to a variable\n        )\n    ) +\n    annotate(\n      'text',  \n      x = 0,\n      y = 0,\n      label = paste0(round(nrow(df) / 1000000, 2), \"M\\nTotal\\nRides\"),\n      size = 7,\n      lineheight = 1\n    ) +\n    coord_equal(expand = FALSE, xlim = c(-1.1, 1.1), ylim = c(-1.1, 1.1)) +\n    theme_void(base_size = 16) +\n    labs(\n        fill = \"Membership Type\"  # Add a meaningful label for the legend\n    ) +\n    theme(\n        legend.position = \"right\",  # Place the legend on the right\n        legend.margin = margin(t = 1, b = 0.5, unit = 'cm'), \n        legend.text = element_text(size = 15)\n    ) +\n    scale_fill_manual(\n        values = pnw_palette(\"Sunset\", n = 2),\n        labels = c(\"Casual\", \"Member\")  # Custom labels for legend categories\n    )\n\n\n\n\n\n\n\n\n\nObservations:\n\n55.2% of rides were made by members, while 44.8% were made by casual users."
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "about_me.html#about-me",
+    "href": "about_me.html#about-me",
+    "title": "",
+    "section": "About Me",
+    "text": "About Me\nHello, I’m Farhan Sadeek, a student at The Ohio State University. My passion lies in the dynamic realms of Software Development, Machine Learning, and Artificial Intelligence. As an active member of the AI Club and enthusiastic participant in competitive programming, I thrive on exploring innovative solutions to complex challenges. A dedication to understanding marks my academic journey the intricacies of computer science and applying theoretical knowledge to real-world scenarios."
+  },
+  {
+    "objectID": "about_me.html#professional-journey",
+    "href": "about_me.html#professional-journey",
+    "title": "",
+    "section": "Professional Journey",
+    "text": "Professional Journey\n\nExperience\n\nUndergraduate Research Assistant\nJanuary 2024 - Present\nThe Ohio State University\nI will be working on a research project on the impact of U.S. natural disasters on individuals with diverse identities, advised by Dr. Kelsea Best. Using Python (pandas, matplotlib) and R (Tidyverse, ggplot2) for data visualization, I will attend weekly Zoom meetings to report updates and deliver presentations.\n\n\nTechnical Analyst\nJune 2023 - Present\nSpectrum\nI collaboratively resolved complex issues cross-functionally, leveraging statistical methodologies that led to a 15% improvement in team satisfaction. Additionally, I demonstrated advanced research knowledge, consistently exceeding targets and achieving a 10% increase in project milestones and academic standards through rigorous statistical analysis.\n\n\nData Analyst\nAugust 2021 - Present\nGoogle AI\nI leveraged my expertise in Kaggle datasets to analyze and extract valuable insights, driving data-driven decision-making and enhancing business performance. Through developing and implementing advanced machine learning models and algorithms, I achieved a 20% improvement in solving complex problems and optimizing business processes. Collaborating with cross-functional teams, I effectively communicated findings from Kaggle datasets, enabling stakeholders to make informed decisions and contributing to a 10% increase in desired outcomes.\n\n\nData Science Intern\nMay 2022 - August 2022\nHarvard University\nDeveloped Dr. Kane’s Harvard Class GOV 1005 with R coding language along with other student researchers. Four weeks of training under Dr. Kane culminated in an independent Data Analytics Research Project, where I analysed the impact of different economic indices on the population of a country."
+  },
+  {
+    "objectID": "about_me.html#education",
+    "href": "about_me.html#education",
+    "title": "",
+    "section": "Education",
+    "text": "Education\n\nOhio State University\nMay 2027\nRelevant Coursework:\n\nMath 4580: Abstract Algebra I\n\n\n\nMath 4547: Real Analysis I\nMath 4573: Number Theory\nStat 4202: Mathematical Statistics II\nPhysics 2301: Relativistic Mechanics\nMath 4512: Partial Differential Equations\nStat 4201: Mathematical Statistics I\nStat 3470: Engineering Statistics\nMath 3345: Mathematical Proofs\nMath 2568: Linear Algebra\nMath 2153: Multivariable Calculus\nPhysics 2300: Classical Mechanics\nCSE 2321: Discrete Math\nCSE 2231: Software Development\nCSE 2221: Software Components"
+  },
+  {
+    "objectID": "about_me.html#outside-school-work",
+    "href": "about_me.html#outside-school-work",
+    "title": "",
+    "section": "Outside School & Work",
+    "text": "Outside School & Work\n\nActivities & Organizations\n\nCompetitive Programming Club\nAs a member of the Competitive Programming Club at Ohio State University, I actively participate in programming competitions and challenges. Through these experiences, I have enhanced my problem-solving skills and developed efficient coding techniques. I have gained valuable experience in tackling complex programming challenges and improving my algorithmic thinking. Additionally, I have collaborated with fellow programming enthusiasts to enhance our skills and knowledge through group projects and coding sessions.\n\n\nBig Data and Analytics Association\nAs a member of the Big Data and Analytics Association, I gained hands-on experience with data analytics tools like Tableau, PowerBI, and AWS. Through workshops, seminars, and projects, I learned to analyze large datasets, identify patterns, and derive meaningful insights. The association also provided networking opportunities with industry professionals and experts in the field.\n\n\nArtificial Intelligence Club\nThe Artificial Intelligence Club was crucial to my career development. Through their meetings, workshops, and projects, I learned machine learning libraries such as Sci-kit Learn, PyTorch, and TensorFlow. I gained hands-on experience in developing and implementing machine learning models, natural language processing algorithms, and computer vision applications. The club organized guest lectures and industry talks, allowing me to learn from experts in the field and gain insights into real-world AI applications."
+  },
+  {
+    "objectID": "about_me.html#skills",
+    "href": "about_me.html#skills",
+    "title": "",
+    "section": "Skills",
+    "text": "Skills\n\nSoftware Development\n\nPython: 20,000 lines\nC++: 20,000 lines\nJava: 10,000 lines\nHTML: 10,000 lines\nCSS: 10,000 lines\nJavascript: 3,000 lines\nNode JS: 1,000 lines\nReact.js: 1,000 lines\nDjango: 3,000 lines\nGit: &gt; 3 years\n\n\n\nData Science & Artificial Intelligence\n\nSeaborn: 10,000 lines\nTableau: &gt; 2 years\nPyTorch: 5,000 lines\nTensorflow: 5,000 lines\nScikit-Learn: 3,000 lines\nSQL: 3,000 lines\nDocker: &lt; 1 year\nAWS/Azure: 1 year"
+  },
+  {
+    "objectID": "about_me.html#contact-me",
+    "href": "about_me.html#contact-me",
+    "title": "",
+    "section": "Contact Me",
+    "text": "Contact Me\n\nEmail: farhansadeek019@gmail.com\nLinkedIn: farhansadeekde110\nX: SadeekFarhan21"
   }
 ]
